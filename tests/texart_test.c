@@ -126,7 +126,7 @@ static int load_ppm(
   return 0;
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
   unsigned int x, y;
 
@@ -139,7 +139,12 @@ int main(void)
   unsigned int texart_buffer_capacity;
   unsigned int texart_buffer_size = 0;
 
-  if (load_ppm("test.ppm", &pixels, &pixels_width, &pixels_height, &pixels_stride) != 0)
+  if (argc < 2)
+  {
+    return 1;
+  }
+
+  if (load_ppm(argv[1], &pixels, &pixels_width, &pixels_height, &pixels_stride) != 0)
   {
     fprintf(stderr, "Failed to load PPM file.\n");
     return 1;
