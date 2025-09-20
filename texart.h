@@ -28,8 +28,6 @@ LICENSE
 
 #define TEXART_API static
 
-#include "stdio.h"
-
 /* Linear mapping */
 TEXART_API TEXART_INLINE int texart_map(int value, int in_min, int in_max, int out_min, int out_max)
 {
